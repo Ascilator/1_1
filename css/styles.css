@@ -2917,10 +2917,13 @@ textarea {
   }
 }
 
+.line__ {
+  height: 1px;
+}
+
 ._foundation {
   padding-top: 50px;
   padding-bottom: 0;
-  height: calc(100vh - 70px);
 }
 
 @media screen and (max-width: 550px) {
@@ -2931,7 +2934,6 @@ textarea {
 }
 
 ._foundation .wrapper {
-  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
