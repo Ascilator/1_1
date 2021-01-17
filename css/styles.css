@@ -2957,7 +2957,7 @@ textarea {
   left: 0;
   display: none;
   background-color: #000000;
-  z-index: 99;
+  z-index: 9;
 }
 
 .black_href._active {
