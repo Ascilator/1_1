@@ -60,7 +60,7 @@
         $('.filter_header').not(this).siblings().slideUp();
         $('.filter_header').not(this).removeClass('_active');
         $(this).siblings().slideToggle();
-        $(this).addClass('_active');
+        $(this).toggleClass('_active');
     })
 
 
@@ -145,21 +145,16 @@
 
 
 
-    new Swiper('.slider_body', {
-        observer: true,
-        observeParents: true,
-        //observeSlideChildren: true,
-        direction: 'vertical',
-        slidesPerView: 6,
-        scrollbar: {
-            el: '.swiper-scroll',
-            draggable: true,
-        }
-    });
+
 
     var color_item = $('.color.radio').children();
     color_item.on('click', function () {
         color_item.removeClass('_active');
+        $(this).toggleClass('_active');
+    });
+    var color_item_ = $('.color_item.radio');
+    color_item_.on('click', function () {
+        color_item_.removeClass('_active');
         $(this).toggleClass('_active');
     });
     function item_slider() {
@@ -193,11 +188,105 @@
 
 
     }
-    item_slider();
+    if ($('main').hasClass('_item')) {
+        item_slider();
+    }
     function dinamic_adaptive() {
+        var break_good_1 = 900;
+        var break_good_2 = 700;
+        if ($('html').width() < break_good_1) {
+            var elements_1 = $('.goods_container').children('.col').eq(3).children();
+            console.log(elements_1);
+            for (var i = 0; i < elements_1.length; i++) {
+                elements_1.eq(i).addClass('_break_1')
+                if (i % 3 == 0) {
+                    $('.goods_container').children('.col').eq(0).append(elements_1.eq(i));
+                }
+                if (i % 3 == 1) {
+                    $('.goods_container').children('.col').eq(1).append(elements_1.eq(i));
+                }
+                if (i % 3 == 2) {
+                    $('.goods_container').children('.col').eq(2).append(elements_1.eq(i));
+                }
+            }
+        }
+        if ($('html').width() < break_good_2) {
+            var elements_2 = $('.goods_container').children('.col').eq(2).children();
+            console.log(elements_2);
+            for (var i = 0; i < elements_2.length; i++) {
+                elements_2.eq(i).addClass('_break_2')
+                if (i % 2 == 0) {
+                    $('.goods_container').children('.col').eq(0).append(elements_2.eq(i));
+                }
+                if (i % 2 == 1) {
+                    $('.goods_container').children('.col').eq(1).append(elements_2.eq(i));
+                }
+            }
+        }
+        $(window).on('resize', function () {
+            if ($('html').width() < break_good_1) {
+                var elements_1 = $('.goods_container').children('.col').eq(3).children();
 
+                console.log(elements_1);
+                for (var i = 0; i < elements_1.length; i++) {
+                    elements_1.eq(i).addClass('_break_1')
+                    if (i % 3 == 0) {
+                        $('.goods_container').children('.col').eq(0).append(elements_1.eq(i));
+                    }
+                    if (i % 3 == 1) {
+                        $('.goods_container').children('.col').eq(1).append(elements_1.eq(i));
+                    }
+                    if (i % 3 == 2) {
+                        $('.goods_container').children('.col').eq(2).append(elements_1.eq(i));
+                    }
+                }
+            } else {
+                var col_4 = $('.goods_container').children('.col').eq(3);
+                var i = 1;
+                while ($('.goods_container').children('.col').children().hasClass('_break_1')) {
 
+                    if (i % 3 == 1) {
+                        col_4.append($('.goods_container').children('.col').eq(0).children('._break_1').eq(0).removeClass('_break_1'));
 
+                    }
+                    if (i % 3 == 2) {
+                        col_4.append($('.goods_container').children('.col').eq(1).children('._break_1').eq(0).removeClass('_break_1'));
+                    }
+                    if (i % 3 == 0) {
+                        col_4.append($('.goods_container').children('.col').eq(2).children('._break_1').eq(0).removeClass('_break_1'));
+                    }
+                    i++;
+                }
+            }
+            if ($('html').width() < break_good_2) {
+                var elements_2 = $('.goods_container').children('.col').eq(2).children();
+                console.log(elements_2);
+                for (var i = 0; i < elements_2.length; i++) {
+                    elements_2.eq(i).addClass('_break_2')
+                    if (i % 2 == 0) {
+                        $('.goods_container').children('.col').eq(0).append(elements_2.eq(i));
+                    }
+                    if (i % 2 == 1) {
+                        $('.goods_container').children('.col').eq(1).append(elements_2.eq(i));
+                    }
+                }
+            } else {
+                var col_3 = $('.goods_container').children('.col').eq(2);
+                var i = 1;
+                while ($('.goods_container').children('.col').children().hasClass('_break_2')) {
+
+                    if (i % 3 == 1) {
+                        col_3.append($('.goods_container').children('.col').eq(0).children('._break_2').eq(0).removeClass('_break_2'));
+
+                    }
+                    if (i % 3 == 0) {
+                        col_3.append($('.goods_container').children('.col').eq(1).children('._break_2').eq(0).removeClass('_break_2'));
+                    }
+                    i++;
+                }
+            }
+
+        })
         var breakpoint_2 = 650;
         if ($('html').width() < breakpoint_2) {
             $('.sliders_cont').prepend($('#item_header'));
