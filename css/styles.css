@@ -650,6 +650,7 @@ textarea {
   min-width: 0;
   overflow-y: auto;
   overflow-x: hidden !important;
+  padding-bottom: 12px;
 }
 
 .header .logo_n_menu .menu .menu_item._dropped .menu_body .left_part .swiper-container {
