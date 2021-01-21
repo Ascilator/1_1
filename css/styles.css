@@ -84,7 +84,7 @@ textarea {
 }
 
 .scrollbar-outer > .scroll-element.scroll-y .scroll-element_outer {
-  left: 2px;
+  left: 7px;
   width: 4px;
 }
 
@@ -640,10 +640,10 @@ textarea {
   background-color: #ffffff;
   z-index: 10;
   height: 300px;
-  display: none;
 }
 
 .header .logo_n_menu .menu .menu_item._dropped .menu_body .left_part {
+  border-right: solid 1px #d9deea;
   -webkit-box-flex: 0;
       -ms-flex: 0 1 367px;
           flex: 0 1 367px;
