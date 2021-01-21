@@ -14,6 +14,7 @@
             $('body').toggleClass('_lock');
             $('.burger_content').toggleClass('_active');
             $('.black_href').toggleClass('_active');
+            $('.black_href').toggleClass('_active_2');
         }
     });
 
@@ -29,7 +30,8 @@
     $('.black_href').click(function () {
         $('.burger_content').removeClass('_active');
         $('.black_href').removeClass('_active');
-
+        $('.black_href').removeClass('_active_2');
+        $('body').removeClass('_lock');
     })
     $('input').on('focus', function () {
         $('.search').addClass('_active');
@@ -314,6 +316,11 @@
 
     }
     dinamic_adaptive();
+
+    function scroll() {
+        jQuery('#scroll').scrollbar();
+    }
+    scroll();
 });
 
 
