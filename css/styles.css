@@ -640,6 +640,7 @@ textarea {
   background-color: #ffffff;
   z-index: 10;
   height: 300px;
+  display: none;
 }
 
 .header .logo_n_menu .menu .menu_item._dropped .menu_body .left_part {
