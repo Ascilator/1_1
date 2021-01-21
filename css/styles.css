@@ -1494,9 +1494,16 @@ textarea {
   color: #9ba1b3;
 }
 
+.main .catalog_main_part .wrapper .filter_part .filter_body .drop_down_2 .drop_header .arrow {
+  width: 9px;
+  height: 6px;
+}
+
 .main .catalog_main_part .wrapper .filter_part .filter_body .drop_down_2 .drop_header .arrow svg {
   width: 9px;
   height: 6px;
+  -webkit-transform: translate(0, -7px);
+          transform: translate(0, -7px);
 }
 
 .main .catalog_main_part .wrapper .filter_part .filter_body .drop_down_2 .drop_header .arrow svg, .main .catalog_main_part .wrapper .filter_part .filter_body .drop_down_2 .drop_header .arrow path {
@@ -2569,7 +2576,7 @@ textarea {
     -webkit-box-ordinal-group: 4;
         -ms-flex-order: 3;
             order: 3;
-    margin: 20px -20px 0;
+    margin: 30px -20px 0;
     padding: 20px;
     background: #fafafa;
   }
